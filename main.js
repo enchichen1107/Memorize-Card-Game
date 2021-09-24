@@ -1,3 +1,4 @@
+//initial data
 const GAME_STATE = {
   FirstCardAwaits: 'FirstCardAwaits',
   SecondCardAwaits: 'SecondCardAwaits',
@@ -13,6 +14,7 @@ const Symbols = [
   'https://image.flaticon.com/icons/svg/105/105212.svg' // 方塊
 ]
 
+//functions for page visualization
 const view = {
   getCardElement (index) {
     const symbolNum = Math.floor(index / 13)
@@ -112,6 +114,7 @@ const view = {
   }
 }
 
+//functions for data processing
 const model = {
   revealedCards: [],
 
@@ -129,6 +132,7 @@ const model = {
   triedTimes: 0
 }
 
+//functions for proceeding game status
 const controller = {
   currentState: GAME_STATE.FirstCardAwaits,
 
@@ -193,6 +197,7 @@ const controller = {
   }
 }
 
+//functions for shuffling cards
 const utility = {
   getRandomNumberArray (count) {
     // randomly select 5 numbers out of 52
@@ -216,6 +221,7 @@ const utility = {
   }
 }
 
+//start game
 controller.generateCards()
 
 document.querySelectorAll('.card').forEach((card) => {
